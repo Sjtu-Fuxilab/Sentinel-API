@@ -1,6 +1,7 @@
 # Sentinel-API
 
 <!-- badges: start -->
+[![Docker](https://img.shields.io/badge/container-GHCR-blue)](https://ghcr.io/sjtu-fuxilab/sentinel-api)
 ![CI](https://github.com/Sjtu-Fuxilab/Sentinel-API/actions/workflows/ci.yml/badge.svg?branch=main)
 ![CodeQL](https://github.com/Sjtu-Fuxilab/Sentinel-API/actions/workflows/codeql.yml/badge.svg?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -54,3 +55,9 @@ Sentinel-API/
 
 ## 👥 Authors
 Sanwal Ahmad Zafar, Assoc. Prof. Wei Qin · · Fuxilab, Shanghai Jiao Tong University, China. 
+## 🐳 Container (GHCR)
+
+```bash
+docker pull ghcr.io/sjtu-fuxilab/sentinel-api:latest
+docker run --rm -p 8000:8000 ghcr.io/sjtu-fuxilab/sentinel-api:latest
+```
