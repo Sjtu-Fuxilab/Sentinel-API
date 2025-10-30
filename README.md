@@ -68,3 +68,10 @@ docker run --rm -p 8000:8000 ghcr.io/sjtu-fuxilab/sentinel-api:latest
 [▶ sentinel-api-compressed.mp4](docs/videos/sentinel-api-compressed.mp4)
 <p><video src="docs/videos/sentinel-api-compressed.mp4" controls width="720"></video></p>
 
+## Reproducibility
+
+- **Exact Python environment:** see [`requirements-lock.txt`](requirements-lock.txt).
+- **Container image:** published to GHCR (`ghcr.io/sjtu-fuxilab/sentinel-api`) per release tag.
+- **Traceability:** the API exposes `GET /version` returning the `tag` and `git sha`.
+- **How to cite:** repository includes a `CITATION.cff`; a DOI will be added after the preprint/publication is available.
+
