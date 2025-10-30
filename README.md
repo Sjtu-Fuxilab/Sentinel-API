@@ -46,4 +46,4 @@ Sentinel-API/
 ```
 
 ## 👥 Authors
-Sanwal Ahmad Zafar · Shanghai Jiao Tong University · Fuxilab
+Sanwal Ahmad Zafar, Assoc. Prof. Wei Qin · · Fuxilab, Shanghai Jiao Tong University, China. 
