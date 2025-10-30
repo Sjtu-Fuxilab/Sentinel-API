@@ -1,10 +1,12 @@
 name: CI
 on:
   push:
+    branches: [ main ]
   pull_request:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -19,11 +21,9 @@ jobs:
           python -V
           python -c "import fastapi, pydantic, httpx; print('fastapi', fastapi.__version__, 'pydantic', pydantic.__version__, 'httpx', httpx.__version__)"
       - name: Lint (ruff)
-        # soft on PRs; informational only
         continue-on-error: ${{ github.event_name == 'pull_request' }}
         run: ruff check . || echo 'ruff warnings ignored on PRs'
       - name: Tests (pytest)
-        # enforce on push; soft on PRs
         continue-on-error: ${{ github.event_name == 'pull_request' }}
         run: pytest -q
       - name: Vulnerability scan (pip-audit, non-blocking)
