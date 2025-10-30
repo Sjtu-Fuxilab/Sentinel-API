@@ -65,5 +65,6 @@ docker run --rm -p 8000:8000 ghcr.io/sjtu-fuxilab/sentinel-api:latest
 
 ## Figures & Demo
 
-[▶ Sentinel API.mp4](https://github.com/Sjtu-Fuxilab/Sentinel-API/releases/download/v0.1.2/Sentinel.API.mp4)
+[▶ sentinel-api-compressed.mp4](docs/videos/sentinel-api-compressed.mp4)
+<p><video src="docs/videos/sentinel-api-compressed.mp4" controls width="720"></video></p>
 
