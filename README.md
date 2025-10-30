@@ -1,5 +1,12 @@
 # Sentinel-API
 
+<!-- badges: start -->
+![CI](https://github.com/Sjtu-Fuxilab/Sentinel-API/actions/workflows/ci.yml/badge.svg?branch=main)
+![CodeQL](https://github.com/Sjtu-Fuxilab/Sentinel-API/actions/workflows/codeql.yml/badge.svg?branch=main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<!-- badges: end -->
+
+
 🏥 Machine Learning API for ICU Mortality Prediction
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
