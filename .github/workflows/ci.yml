@@ -8,6 +8,10 @@ jobs:
     env:
       PYTHONPATH: ${{ github.workspace }}
     steps:
+
+- name: Write build metadata
+  run: |
+    echo "{"tag":"${GIT_TAG}","sha":"${GIT_SHA}"}" > api/buildmeta.json
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
