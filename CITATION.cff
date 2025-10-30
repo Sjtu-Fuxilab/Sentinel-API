@@ -1,10 +1,18 @@
 cff-version: 1.2.0
-message: 'If you use this software, please cite it as below.'
-title: 'Sentinel-API: ICU Mortality Prediction API'
+message: "If you use this software, please cite it as below."
+title: "Sentinel-API: ICU Mortality Prediction API"
+version: "0.1.2"
+date-released: "2025-10-30"
 authors:
-  - family-names: 'Zafar'
-    given-names: 'Sanwal Ahmad'
-repository-code: 'https://github.com/Sjtu-Fuxilab/Sentinel-API'
-license: 'MIT'
-version: '0.1.0'
-date-released: '2025-10-30'
+  - family-names: "Zafar"
+    given-names: "Sanwal Ahmad"
+    affiliation: "Shanghai Jiao Tong University, Fuxilab"
+repository-code: "https://github.com/Sjtu-Fuxilab/Sentinel-API"
+license: "MIT"
+type: software
+keywords:
+  - ICU
+  - mortality prediction
+  - machine learning
+  - FastAPI
+notes: "Pre-publication; DOI will be added after preprint/publication."
