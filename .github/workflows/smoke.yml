@@ -1,28 +1,27 @@
 name: API smoke
-
 on:
-  push:
-    branches: [ main ]
+  push: { branches: [ main ] }
   workflow_dispatch:
-
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
+        with: { python-version: '3.11' }
       - name: Install minimal deps
         run: |
           python -m pip install --upgrade pip
           pip install fastapi pydantic requests httpx starlette
-
-      - name: Run smoke tests (in-process)
+      - name: Sanity import
+        run: python - <<'PY'
+from api.main import app
+print("import OK:", bool(app))
+PY
+      - name: Run smoke
         run: python tests/smoke_api.py
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
