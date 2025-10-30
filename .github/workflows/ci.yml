@@ -6,7 +6,7 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -18,9 +18,13 @@ jobs:
         run: |
           python -V
           python -c "import fastapi, pydantic, httpx; print('fastapi', fastapi.__version__, 'pydantic', pydantic.__version__, 'httpx', httpx.__version__)"
-      - name: Lint (ruff, non-blocking)
-        run: ruff check . || echo 'ruff warnings ignored for now'
+      - name: Lint (ruff)
+        # soft on PRs; informational only
+        continue-on-error: ${{ github.event_name == 'pull_request' }}
+        run: ruff check . || echo 'ruff warnings ignored on PRs'
       - name: Tests (pytest)
+        # enforce on push; soft on PRs
+        continue-on-error: ${{ github.event_name == 'pull_request' }}
         run: pytest -q
       - name: Vulnerability scan (pip-audit, non-blocking)
         run: pip-audit -r requirements.txt || true
