@@ -44,6 +44,19 @@ except Exception:
 GIT_SHA = os.getenv("GIT_SHA", "unknown")
 GIT_TAG = os.getenv("GIT_TAG", "v0.0.0")
 
+
+# --- Build metadata fallback (no git/ENV) ---
+import json, pathlib
+_META = {}
+try:
+    _meta_path = pathlib.Path(__file__).with_name("buildmeta.json")
+    if _meta_path.exists():
+        _META = json.loads(_meta_path.read_text())
+except Exception:
+    _META = {}
+GIT_TAG = os.getenv("GIT_TAG", _META.get("tag", "v0.0.0"))
+GIT_SHA = os.getenv("GIT_SHA", _META.get("sha", "unknown"))
+
 @app.get("/version")
 def version():
     return {
