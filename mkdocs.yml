@@ -1,0 +1,6 @@
+site_name: Sentinel-API Docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Usage: usage.md

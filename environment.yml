@@ -1,0 +1,15 @@
+name: sentinel
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - fastapi==0.115.0
+    - uvicorn==0.30.0
+    - scikit-learn==1.5.2
+    - xgboost==2.1.1
+    - shap==0.46.0
+    - pydantic==2.9.0
+    - pytest==8.3.3
+    - ruff==0.6.9
+    - pip-audit==2.7.3

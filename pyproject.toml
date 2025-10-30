@@ -1,0 +1,12 @@
+[project]
+name = 'sentinel-api'
+version = '0.1.0'
+description = 'ICU Mortality Prediction API (research-only)'
+readme = 'README.md'
+requires-python = '>=3.9'
+authors = [{ name = 'Sanwal Ahmad Zafar' }]
+license = { text = 'MIT' }
+
+[tool.ruff]
+line-length = 100
+target-version = 'py311'
