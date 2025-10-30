@@ -26,5 +26,15 @@ jobs:
       - name: Tests (pytest)
         continue-on-error: ${{ github.event_name == 'pull_request' }}
         run: pytest -q
+      - name: Coverage (generate)
+        run: |
+          pip install coverage
+          coverage run -m pytest -q
+          coverage xml -o coverage.xml
+      - name: Upload coverage.xml
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
       - name: Vulnerability scan (pip-audit, non-blocking)
         run: pip-audit -r requirements.txt || true
