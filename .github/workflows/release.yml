@@ -10,7 +10,14 @@ permissions:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    env:
+      GIT_TAG: ${{ github.ref_name }}
+      GIT_SHA: ${{ github.sha }}
     steps:
+
+- name: Write build metadata
+  run: |
+    echo "{"tag":"${GIT_TAG}","sha":"${GIT_SHA}"}" > api/buildmeta.json
       - uses: actions/checkout@v4
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
