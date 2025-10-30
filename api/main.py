@@ -34,5 +34,23 @@ def predict(request: PredictionRequest):
 def health_check():
     return {'status': 'healthy'}
 
+
+
+# --- Version endpoint for traceability ---
+try:
+    import os  # ensure available
+except Exception:
+    import os as os  # fallback (no-op)
+GIT_SHA = os.getenv("GIT_SHA", "unknown")
+GIT_TAG = os.getenv("GIT_TAG", "v0.0.0")
+
+@app.get("/version")
+def version():
+    return {
+        "app": "Sentinel-API",
+        "tag": GIT_TAG,
+        "sha": GIT_SHA
+    }
+
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)
