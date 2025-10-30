@@ -61,3 +61,32 @@ Sanwal Ahmad Zafar, Assoc. Prof. Wei Qin · · Fuxilab, Shanghai Jiao Tong Unive
 docker pull ghcr.io/sjtu-fuxilab/sentinel-api:latest
 docker run --rm -p 8000:8000 ghcr.io/sjtu-fuxilab/sentinel-api:latest
 ```
+
+
+## Figures & Demo
+
+![figure-01-s4.png](docs/figures/figure-01-s4.png)
+
+![figure-02-s3.png](docs/figures/figure-02-s3.png)
+
+![fig-4.png](docs/figures/fig-4.png)
+
+![fig-2.png](docs/figures/fig-2.png)
+
+![fig-1.png](docs/figures/fig-1.png)
+
+![fig-3.png](docs/figures/fig-3.png)
+
+![figure-07-s1.png](docs/figures/figure-07-s1.png)
+
+![figure-08-s2.png](docs/figures/figure-08-s2.png)
+
+![figure-09-s6.jpg](docs/figures/figure-09-s6.jpg)
+
+![figure-10-s7.jpg](docs/figures/figure-10-s7.jpg)
+
+![figure-11-s5.jpg](docs/figures/figure-11-s5.jpg)
+
+[▶ demo-icu-20250901.mp4](https://github.com/Sjtu-Fuxilab/Sentinel-API/releases/download/v0.1.2/demo-icu-20250901.mp4)  
+
+
